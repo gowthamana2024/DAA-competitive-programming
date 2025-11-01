@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    while(T--) {
+        int N1, N2;
+        scanf("%d", &N1);
+        int arr1[N1];
+        for(int i=0; i<N1; i++) scanf("%d", &arr1[i]);
+
+        scanf("%d", &N2);
+        int arr2[N2];
+        for(int i=0; i<N2; i++) scanf("%d", &arr2[i]);
+
+        int i=0, j=0;
+        while(i<N1 && j<N2) {
+            if(arr1[i] < arr2[j]) i++;
+            else if(arr1[i] > arr2[j]) j++;
+            else {
+                printf("%d ", arr1[i]);
+                i++; j++;
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
